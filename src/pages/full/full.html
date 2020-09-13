@@ -1,0 +1,29 @@
+<!--
+  Generated template for the FullPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only (click)="share()"><ion-icon name="md-share"></ion-icon></button>
+          <button *ngIf="showEdit" ion-button icon-only (click)="addText()"><ion-icon name="md-create"></ion-icon></button>
+          <button ion-button icon-only (click)="setOrSaveWallpaper()"><ion-icon ios="ios-download" md="md-image"></ion-icon></button>
+      </ion-buttons>
+    <ion-title *ngIf="showEdit"></ion-title>
+    <ion-buttons end>
+      <button *ngIf="showEdit" ion-button icon-only (click)="closeWallpaper()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<!-- <ion-content [ngStyle]="{'background-image': 'url(' + imageSrc +  ')','background-repeat': 'no-repeat', 'background-size': 'cover' }"> -->
+<!-- <ion-content class="content" [ngStyle]="{'background-image': 'url(' + canvas +  ')','background-repeat': 'no-repeat', 'background-size': 'cover' }"> -->
+  <ion-content>
+  <canvas #myCanvas id="myCanvas" width="{{width}}" height="{{height}}" [ngStyle]="{'display': displayCanvas}"></canvas>
+  <img #image [src]="imageSrc" id="image" [ngStyle]="{'display': displayImage}"/>
+</ion-content>

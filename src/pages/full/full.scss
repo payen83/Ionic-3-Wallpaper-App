@@ -1,0 +1,16 @@
+page-full {
+    #myCanvas{
+        // width: 100%;
+        // height: 100%;
+        background-size: cover;
+    }
+
+    #image{
+        display: block;
+    }
+
+    .content{
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+    }
+}

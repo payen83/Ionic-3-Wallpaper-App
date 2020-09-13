@@ -1,0 +1,50 @@
+<!--- Theme Parallax Basic -->
+<!--- Header Big Image-->
+<ion-content elastic-header has-header *ngIf="data != null">
+  <ion-item no-lines background-size id="elastic-header"
+  [ngStyle]="{'background-image': 'url(' + data.headerImage + ')'}">
+    <ion-thumbnail>
+      <img src="{{data.avatar}}" />
+    </ion-thumbnail>
+    <div text-center>
+      <h1 parallax-title>{{data.title}}</h1>
+      <p parallax-subtitle>{{data.subtitle}}</p>
+    </div>
+  </ion-item>
+  <!--Content-->
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-12>
+        <ion-list no-margin>
+          <!-- <ion-item *ngFor="let item of data.items;let i = index" (click)="onEvent('onItemClick', item)"> -->
+            <!-- <ion-avatar item-start>
+              <img src="{{item.image}}">
+            </ion-avatar> -->
+          <ion-item (click)="onEvent('onShare', item)">
+            <h2 item-title>Share this App</h2>
+            <!-- <h3 item-subtitle>{{item.description}}</h3> -->
+            <ion-icon item-right (click)="onEvent('onShare', item, $event)">
+              <i icon-small class="icon"
+              [ngClass]="{'icon-share-variant': true}"></i>
+            </ion-icon>
+          </ion-item>
+          <ion-item (click)="onEvent('onContact', item)">
+              <h2 item-title>Contact Us</h2>
+              <ion-icon item-right (click)="onEvent('onContact', item, $event)">
+                <i icon-small class="icon"
+                [ngClass]="{'icon-email': true}"></i>
+              </ion-icon>
+            </ion-item>
+
+        
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<!-- Fab Button -->
+<!-- <ion-fab #fab bottom right>
+  <button button-ion-fab ion-fab (click)="onEvent('onFab', data, $event)">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab> -->

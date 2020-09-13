@@ -1,11 +1,16 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon class="icon-menu" name="menu"></ion-icon>
+    </button>
+        <ion-title>About</ion-title>
+    </ion-navbar>
+  </ion-header>
 
-<ion-content padding>
-
-</ion-content>
+<!-- <ion-content> -->
+  <parallax-layout-3
+     [data]="params.data"
+     [events]="params.events">
+ </parallax-layout-3>
+   
+<!-- </ion-content> -->

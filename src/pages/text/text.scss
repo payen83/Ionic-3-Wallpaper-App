@@ -1,0 +1,18 @@
+page-text {
+     
+    ion-item, ion-list, ion-input, ion-select, ion-popover {
+        background-color: white;
+    }
+
+    .item-ios, .item-md, .radio-md, .radio-ios .radio, .item-cover .item-block .item {
+        background-color: white !important;
+    }
+
+    .item-md{
+        background-color: white;
+    }
+
+    .toolbar-title-ios, .toolbar-title-md{
+        font-size: 1em !important;
+    }
+}

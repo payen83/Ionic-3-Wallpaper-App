@@ -1,0 +1,50 @@
+<!--
+  Generated template for the TextPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar text-wrap>
+    <ion-title>Add Text</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-input placeholder="First line" type="text" [(ngModel)]="data.first"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Second line" type="text" [(ngModel)]="data.second"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Text Color</ion-label>
+      <ion-select [(ngModel)]="data.textColor" interface="popover">
+        <ion-option value="#424242" selected="true">Dark</ion-option>
+        <ion-option value="#ffffff">Light</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Placement</ion-label>
+        <ion-select [(ngModel)]="data.textPlacement" interface="popover">
+          <ion-option value="0.07" selected="true">Top</ion-option>
+          <ion-option value="0.5">Middle</ion-option>
+          <ion-option value="0.9">Bottom</ion-option>
+        </ion-select>
+      </ion-item>
+
+  </ion-list>
+  <button ion-button block (click)="addText()">Add</button>
+
+</ion-content>
+

@@ -1,6 +1,4 @@
-// http://ionicframework.com/docs/theming/
-
-
+// http://ionicframework.com/docs/v2/theming/
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,97 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// Settings Style Main Meni
+[header-background-image] {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    @include darkening-blend-mode;
+    ion-thumbnail {
+        padding-top: 40px;
+        img {
+            margin: 0 auto;
+            position: relative;
+            z-index: 9;
+            max-width: 80px;
+        }
+    }
+    [item-title] {
+        position: relative;
+        z-index: 9;
+    }
+}
+
+// Settings Main  Menu
+[main-menu] {
+    ion-icon {
+        color: theme-colors('textColors', 'primary');
+        float: left;
+        padding-left: 30px;
+        margin-right: 10px;
+    }
+}
+
+// Settings Submenu
+[submenu] {
+    ion-label {
+        padding-left: 30px !important;
+    }
+}
+
+.menu-item{
+    background-color: #424242 !important;
+}
+
+.item-md, .item-ios{
+    background-color: white;
+}
+.my-modal {
+    // height: 50%!important;
+    // transform: translateY(100%);
+    @media (min-height: 500px) {
+      ion-backdrop {
+        visibility: visible;
+      }
+    }
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $z-index-overlay;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    contain: strict;
+    .modal-wrapper {
+      &,
+      .ion-page,
+      .ion-page .content,
+      .ion-page .content .scroll-content {
+        contain: content;
+        position: relative;
+        top: auto;
+        left: auto;
+        padding: 1px;
+      }
+      z-index: $z-index-overlay-wrapper;
+      display: flex;
+      overflow: hidden;
+      flex-direction: column;
+      min-width: $alert-min-width;
+      max-height: $alert-max-height;
+      opacity: 0;
+      height: auto;
+      //max-width: $alert-md-max-width;
+      border-radius: $alert-md-border-radius;
+      background-color: $alert-md-background-color;
+      box-shadow: $alert-md-box-shadow;
+      border-radius: 10px;
+      padding:5px;
+      .ion-page .content {
+        background-color: color($colors, light);
+      }
+    }
+  }
